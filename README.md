@@ -12,10 +12,15 @@ KNOWN ISSUES:
 REQUIRED STORIES COMPLETED:
 
 Implement scrollable tray of images
+
 You should be able to drag the tray up or down.
+
 Once the tray is revealed, you shouldn't be able to drag it any more.
+
 After releasing the tray, it should either move to its hidden position or its revealed position.
+
 Dragging an image from the tray should create a new copy of the image which can be dragged into the canvas area.
+
 Pinching images in the canvas area should resize them
 
 
