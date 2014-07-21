@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6154.21" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="photo_pet_chef1" customModuleProvider="target">
+            <connections>
+                <outlet property="beetView" destination="Dvm-7y-fVw" id="9gs-mZ-TUL"/>
+                <outlet property="bellButton" destination="01P-WP-wrU" id="TdP-G8-TgX"/>
+                <outlet property="carrotView" destination="M8Q-Z5-Cxb" id="do1-w8-Dk9"/>
+                <outlet property="cornView" destination="arW-Fr-m7U" id="rKD-9V-aoN"/>
+                <outlet property="creature" destination="Dpz-6V-5U0" id="J6H-dd-55V"/>
+                <outlet property="menuView" destination="4p4-a3-cRa" id="0yA-Y3-PFs"/>
+                <outlet property="painting" destination="DRU-GA-4NX" id="N2z-wa-kCE"/>
+                <outlet property="panelContentView" destination="gfU-2O-Y9d" id="VCc-kt-b7y"/>
+                <outlet property="panelScrollView" destination="LL9-w0-8NP" id="bEY-vc-0PW"/>
+                <outlet property="pearView" destination="JeI-Pw-g01" id="CJf-eT-55P"/>
+                <outlet property="response1" destination="FwA-o8-v4Q" id="yTA-zE-EUG"/>
+                <outlet property="response2" destination="wWC-Ab-MDG" id="I3p-tj-Q6b"/>
+                <outlet property="response3" destination="ayD-rr-8ax" id="8wQ-1a-aUS"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="creature" translatesAutoresizingMaskIntoConstraints="NO" id="Dpz-6V-5U0">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="11" y="35" width="164" height="202"/>
+                    </variation>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iBh-T1-hot">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plateplacemat" translatesAutoresizingMaskIntoConstraints="NO" id="O0s-ja-DBS">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <variation key="widthClass=compact" fixedFrame="YES">
+                                <rect key="frame" x="20" y="5" width="274" height="175"/>
+                            </variation>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="01P-WP-wrU">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="widthClass=compact" fixedFrame="YES">
+                                <rect key="frame" x="241" y="130" width="47" height="40"/>
+                            </variation>
+                            <connections>
+                                <action selector="onBellPress:" destination="-1" eventType="touchUpInside" id="a9a-vb-IHI"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEj-Vg-yEa">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="widthClass=compact" fixedFrame="YES">
+                                <rect key="frame" x="20" y="106" width="79" height="74"/>
+                            </variation>
+                            <connections>
+                                <action selector="clearPlate:" destination="-1" eventType="touchUpInside" id="ceh-th-qo9"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.8840680803571429" green="0.82967092635993345" blue="0.76037049695643744" alpha="1" colorSpace="calibratedRGB"/>
+                    <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="O0s-ja-DBS"/>
+                            <exclude reference="01P-WP-wrU"/>
+                            <exclude reference="TEj-Vg-yEa"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="0.0" y="191" width="320" height="289"/>
+                        <mask key="subviews">
+                            <include reference="O0s-ja-DBS"/>
+                            <include reference="01P-WP-wrU"/>
+                            <include reference="TEj-Vg-yEa"/>
+                        </mask>
+                    </variation>
+                </view>
+                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu" translatesAutoresizingMaskIntoConstraints="NO" id="4p4-a3-cRa">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <gestureRecognizers/>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="6" y="387" width="68" height="86"/>
+                    </variation>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="uPu-XZ-g8R" appends="YES" id="Erg-3Y-wSX"/>
+                        <outletCollection property="gestureRecognizers" destination="UI1-xV-brx" appends="YES" id="USP-cb-8LX"/>
+                    </connections>
+                </imageView>
+                <scrollView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LL9-w0-8NP">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfU-2O-Y9d">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <subviews>
+                                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food1" translatesAutoresizingMaskIntoConstraints="NO" id="arW-Fr-m7U">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <gestureRecognizers/>
+                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                        <rect key="frame" x="27" y="14" width="34" height="34"/>
+                                    </variation>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="hJK-xy-ask" appends="YES" id="6lB-hy-hab"/>
+                                    </connections>
+                                </imageView>
+                                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food3" translatesAutoresizingMaskIntoConstraints="NO" id="Dvm-7y-fVw">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <gestureRecognizers/>
+                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                        <rect key="frame" x="181" y="14" width="34" height="34"/>
+                                    </variation>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="egH-dV-DV2" appends="YES" id="4zF-zw-JwB"/>
+                                    </connections>
+                                </imageView>
+                                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food4" translatesAutoresizingMaskIntoConstraints="NO" id="JeI-Pw-g01">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <gestureRecognizers/>
+                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                        <rect key="frame" x="257" y="14" width="34" height="34"/>
+                                    </variation>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="8OS-yO-vqw" appends="YES" id="gpu-Ab-HRC"/>
+                                    </connections>
+                                </imageView>
+                                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food2" translatesAutoresizingMaskIntoConstraints="NO" id="M8Q-Z5-Cxb">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <gestureRecognizers/>
+                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                        <rect key="frame" x="104" y="14" width="34" height="34"/>
+                                    </variation>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="V4u-ik-Tb6" appends="YES" id="nFm-MB-a8K"/>
+                                    </connections>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food1" translatesAutoresizingMaskIntoConstraints="NO" id="jJP-bj-scv">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <gestureRecognizers/>
+                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                        <rect key="frame" x="339" y="14" width="34" height="34"/>
+                                    </variation>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food3" translatesAutoresizingMaskIntoConstraints="NO" id="y3Y-Aa-FVl">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                        <rect key="frame" x="492" y="14" width="34" height="34"/>
+                                    </variation>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food2" translatesAutoresizingMaskIntoConstraints="NO" id="Ul8-Ps-eXg">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                        <rect key="frame" x="415" y="14" width="34" height="34"/>
+                                    </variation>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food4" translatesAutoresizingMaskIntoConstraints="NO" id="PkO-Z5-goX">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                        <rect key="frame" x="568" y="14" width="34" height="34"/>
+                                    </variation>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" red="0.94195822010869568" green="0.85634775596210588" blue="0.72564419883649967" alpha="1" colorSpace="calibratedRGB"/>
+                            <variation key="default">
+                                <mask key="subviews">
+                                    <exclude reference="arW-Fr-m7U"/>
+                                    <exclude reference="Dvm-7y-fVw"/>
+                                    <exclude reference="JeI-Pw-g01"/>
+                                    <exclude reference="M8Q-Z5-Cxb"/>
+                                    <exclude reference="jJP-bj-scv"/>
+                                    <exclude reference="y3Y-Aa-FVl"/>
+                                    <exclude reference="Ul8-Ps-eXg"/>
+                                    <exclude reference="PkO-Z5-goX"/>
+                                </mask>
+                            </variation>
+                            <variation key="widthClass=compact" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="9" width="643" height="62"/>
+                                <mask key="subviews">
+                                    <include reference="arW-Fr-m7U"/>
+                                    <include reference="Dvm-7y-fVw"/>
+                                    <include reference="JeI-Pw-g01"/>
+                                    <include reference="M8Q-Z5-Cxb"/>
+                                    <include reference="jJP-bj-scv"/>
+                                    <include reference="y3Y-Aa-FVl"/>
+                                    <include reference="Ul8-Ps-eXg"/>
+                                    <include reference="PkO-Z5-goX"/>
+                                </mask>
+                            </variation>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.82967476222826086" green="0.74517854138845752" blue="0.63079365196793036" alpha="1" colorSpace="calibratedRGB"/>
+                    <gestureRecognizers/>
+                    <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="gfU-2O-Y9d"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="0.0" y="394" width="643" height="71"/>
+                        <mask key="subviews">
+                            <include reference="gfU-2O-Y9d"/>
+                        </mask>
+                    </variation>
+                </scrollView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DRU-GA-4NX">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="122" y="20" width="189" height="139"/>
+                    </variation>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="149" translatesAutoresizingMaskIntoConstraints="NO" id="FwA-o8-v4Q">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Can I have a bit mo' please :(">
+                            <attributes>
+                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                <font key="NSOriginalFont" size="17" name="HelveticaNeue-Bold"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="162" y="0.0" width="149" height="159"/>
+                    </variation>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="149" translatesAutoresizingMaskIntoConstraints="NO" id="wWC-Ab-MDG">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <attributedString key="attributedText">
+                        <fragment content="NOMNOMNOM">
+                            <attributes>
+                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                <font key="NSOriginalFont" size="17" name="HelveticaNeue-Bold"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="162" y="0.0" width="149" height="159"/>
+                    </variation>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="149" translatesAutoresizingMaskIntoConstraints="NO" id="ayD-rr-8ax">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Oof. Too much.">
+                            <attributes>
+                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                <font key="NSOriginalFont" size="17" name="HelveticaNeue-Bold"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="162" y="0.0" width="149" height="159"/>
+                    </variation>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.71743463010204089" green="0.71743463010204089" blue="0.71743463010204089" alpha="1" colorSpace="calibratedRGB"/>
+            <gestureRecognizers/>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="AbstractSizeClassScreen[widthClass=compact]"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="Dpz-6V-5U0"/>
+                    <exclude reference="iBh-T1-hot"/>
+                    <exclude reference="4p4-a3-cRa"/>
+                    <exclude reference="LL9-w0-8NP"/>
+                    <exclude reference="DRU-GA-4NX"/>
+                    <exclude reference="FwA-o8-v4Q"/>
+                    <exclude reference="wWC-Ab-MDG"/>
+                    <exclude reference="ayD-rr-8ax"/>
+                </mask>
+            </variation>
+            <variation key="widthClass=compact">
+                <mask key="subviews">
+                    <include reference="Dpz-6V-5U0"/>
+                    <include reference="iBh-T1-hot"/>
+                    <include reference="4p4-a3-cRa"/>
+                    <include reference="LL9-w0-8NP"/>
+                    <include reference="DRU-GA-4NX"/>
+                    <include reference="FwA-o8-v4Q"/>
+                    <include reference="wWC-Ab-MDG"/>
+                    <include reference="ayD-rr-8ax"/>
+                </mask>
+            </variation>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="mPS-qh-eHi" appends="YES" id="c9w-M3-qCh"/>
+            </connections>
+        </view>
+        <tapGestureRecognizer numberOfTapsRequired="2" id="mPS-qh-eHi">
+            <connections>
+                <action selector="onDoubleTap:" destination="-1" id="tAH-WO-ZjG"/>
+            </connections>
+        </tapGestureRecognizer>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="UI1-xV-brx">
+            <connections>
+                <action selector="onMenuDrag:" destination="-1" id="SpM-Tq-6bA"/>
+            </connections>
+        </panGestureRecognizer>
+        <tapGestureRecognizer id="uPu-XZ-g8R">
+            <connections>
+                <action selector="onMenuTap:" destination="-1" id="yRU-f9-7P5"/>
+            </connections>
+        </tapGestureRecognizer>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="hJK-xy-ask">
+            <connections>
+                <action selector="onCornPanGesture:" destination="-1" id="p8F-Ry-V8c"/>
+            </connections>
+        </panGestureRecognizer>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="V4u-ik-Tb6">
+            <connections>
+                <action selector="onCarrotPanGesture:" destination="-1" id="ZI0-bK-fbo"/>
+            </connections>
+        </panGestureRecognizer>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="egH-dV-DV2">
+            <connections>
+                <action selector="onBeetPanGesture:" destination="-1" id="7aP-1s-YDz"/>
+            </connections>
+        </panGestureRecognizer>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="8OS-yO-vqw">
+            <connections>
+                <action selector="onPearPanGesture:" destination="-1" id="hNg-QV-MJB"/>
+            </connections>
+        </panGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="creature" width="282" height="405"/>
+        <image name="food1" width="99" height="101"/>
+        <image name="food2" width="95" height="95"/>
+        <image name="food3" width="93" height="95"/>
+        <image name="food4" width="66" height="95"/>
+        <image name="menu" width="127" height="158"/>
+        <image name="plateplacemat" width="534" height="362"/>
+    </resources>
+</document>

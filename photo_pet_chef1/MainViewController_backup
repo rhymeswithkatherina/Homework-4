@@ -1,0 +1,279 @@
+//
+//  MainViewController.swift
+//  photo_pet_chef1
+//
+//  Created by Katherina Nguyen on 7/19/14.
+//  Copyright (c) 2014 KNguyen. All rights reserved.
+//
+
+import UIKit
+
+class MainViewController: UIViewController {
+
+
+    @IBOutlet var panelContentView: UIView
+    @IBOutlet var panelScrollView: UIScrollView
+    @IBOutlet var menuView: UIImageView
+    @IBOutlet var bellButton: UIButton
+
+    
+    @IBOutlet var cornView: UIImageView
+    var originalCornPos = CGPoint(x: 0, y: 0)
+    var panelStatus : Bool?
+    var objectSizex : CGFloat = 50
+    var newCornView : UIImageView?
+    
+    @IBAction func onDoubleTap(sender: UITapGestureRecognizer) {
+        println(panelStatus)
+        println("doubletap detected")
+        
+        panelStatus = true
+        animateScrollPanel()
+        
+        println(panelStatus)
+    }
+    
+    @IBAction func onMenuTap(sender: UITapGestureRecognizer) {
+        
+        println("menu tapped")
+        println(panelStatus)
+        
+        panelStatus = false
+        animateScrollPanel()
+        
+        println(panelStatus)
+    }
+    
+    @IBAction func onMenuDrag(sender: UIPanGestureRecognizer) {
+        
+        var location = sender.locationInView(view)
+        var distance = sender.translationInView(view)
+        
+        //move the menu anywhere on the scren and adapt the hidden opened panel's vertical position to match
+        
+        if (sender.state == UIGestureRecognizerState.Began) {
+            
+            println(panelScrollView.frame.origin.y)
+            
+        } else if (sender.state == UIGestureRecognizerState.Changed) {
+            
+            menuView.center = location
+            
+        } else if (sender.state == UIGestureRecognizerState.Ended) {
+            panelScrollView.center.y = location.y
+        }
+
+    }
+    
+    
+    @IBAction func onFood1PanGesture(sender: UIPanGestureRecognizer) {
+        
+        println("corn panning detected")
+        
+        //location, translation variables tracking new Corn object
+        var location = sender.locationInView(view)
+        var distance = sender.translationInView(view)
+        var velocity = sender.velocityInView(view)
+        
+         // CGPoint of corn button with refernce to scroll view container
+        originalCornPos = CGPoint(x: cornView.frame.origin.x, y: cornView.frame.origin.y)
+        
+        
+        if sender.state == UIGestureRecognizerState.Began {
+            println("gesture starts at %@", NSStringFromCGPoint(location))
+            println("gesture translation at start: %@", NSStringFromCGPoint(distance))
+            
+            
+            // Make new corn object when corn button is clicked. Put it into main view at same y position as cursor, horizontally aligned with corn button
+            
+            newCornView = UIImageView()
+            newCornView!.frame = CGRectMake(originalCornPos.x, location.y, 50, 50)
+            
+            var cornImage = UIImage(named: "food1")
+            newCornView!.image = cornImage
+            newCornView!.userInteractionEnabled = true
+            view.addSubview(newCornView)
+            
+            //add pan gesture to new corn object
+            
+            var newPanGesture = UIPanGestureRecognizer(target: self, action: "onPan:")
+            
+            newCornView!.addGestureRecognizer(newPanGesture)
+
+            //add pinch gesture to new corn object
+
+            var newPinchGesture = UIPinchGestureRecognizer(target: self, action:"onPinch:")
+
+            newCornView!.addGestureRecognizer(newPinchGesture)
+            
+            // make corn icon & new object pop bigger upon first click
+            UIView.animateWithDuration(0, delay: 0.1, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                self.cornView.transform = CGAffineTransformMakeScale(1.3, 1.3)
+                self.newCornView!.transform = CGAffineTransformMakeScale(1.3, 1.3)
+                }, completion: nil)
+
+            
+            
+        } else if sender.state == UIGestureRecognizerState.Changed {
+            
+            println("gesture changing at %@", NSStringFromCGPoint(location))
+            println("gesture translation changing: %@", NSStringFromCGPoint(distance))
+            
+            //makes new corn object draggable with cursor
+            
+            self.newCornView!.center = location
+            
+            //newCornView!.frame = CGRectMake(originalCornPos.x + distance.x, originalCornPos.y + distance.y, newCornView!.frame.size.width, newCornView!.frame.size.height)
+        
+        
+        } else if sender.state == UIGestureRecognizerState.Ended {
+            println("gesture end at %@", NSStringFromCGPoint(location))
+            println("gesture translation end: %@", NSStringFromCGPoint(distance))
+            
+            //make corn button & new object smaller upon button release
+            
+            UIView.animateWithDuration(0, delay: 0.2, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                self.cornView.transform = CGAffineTransformMakeScale(1, 1)
+                self.newCornView!.transform = CGAffineTransformMakeScale(1, 1)
+                }, completion: nil)
+            
+        
+        }
+    }
+    
+    
+    @IBAction func onBellPress(sender: AnyObject) {
+        
+        bellButton.selected = !bellButton.selected
+        
+        if bellButton.selected == true {
+            println("open")
+        } else {
+            println("closed")
+        }
+    }
+    
+
+    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        // Custom initialization
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+        
+        scrollPanelSetUp()
+        panelStatus = false;
+        println(panelStatus)
+        
+    }
+    
+    func onPan(newSender: UIPanGestureRecognizer) {
+        
+        var distance = newSender.translationInView(view)
+        var location = newSender.locationInView(view);
+        var widthOffset = newCornView!.frame.size.width * 0.5
+        var heightOffset = newCornView!.frame.size.height * 0.5
+
+        newCornView!.frame = CGRectMake(location.x - widthOffset, location.y - heightOffset, newCornView!.frame.size.width, newCornView!.frame.size.height)
+        
+        if (newSender.state == UIGestureRecognizerState.Began) {
+            println("2 New gesture Began at %@", NSStringFromCGPoint(location))
+            
+            //makes object bigger upon re-click
+            
+            UIView.animateWithDuration(0, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                self.newCornView!.transform = CGAffineTransformMakeScale(1.3, 1.3)
+                }, completion: nil)
+            
+            
+        } else if (newSender.state == UIGestureRecognizerState.Changed) {
+            println("2 Gesture changed")
+            
+            //makes object draggable with cursor
+            
+            self.newCornView!.center = location
+            
+            
+        } else if (newSender.state == UIGestureRecognizerState.Ended) {
+            println("2 Gesture ended at %@", NSStringFromCGPoint(location))
+            
+            //make object resize upon release
+            
+            UIView.animateWithDuration(0, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                self.newCornView!.transform = CGAffineTransformMakeScale(1, 1)
+                }, completion: nil)
+            
+        }
+    }
+    
+    func onPinch(newSender: UIPinchGestureRecognizer) {
+        
+        var scale: CGFloat = newSender.scale
+        println(scale)
+        println(newCornView!.frame.size.width)
+        objectSizex = newCornView!.frame.size.width
+        
+        //scale object
+
+        self.newCornView!.transform = CGAffineTransformMakeScale(scale, scale)
+
+        
+        
+    }
+    
+    func scrollPanelSetUp() {
+        
+        panelScrollView.scrollEnabled = true
+        panelScrollView.contentSize = CGSize(width:643, height:62)
+        panelScrollView.alpha = 0.0
+        
+    }
+    
+    
+    func animateScrollPanel() {
+        
+        if panelStatus == true {
+            
+            println("panel now closing")
+        
+        UIView.animateWithDuration(0.9, delay: 0.1, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+            self.panelScrollView.alpha = 0.0
+            self.menuView.alpha = 1.0
+            }, completion: nil)
+            
+            panelStatus = false
+            
+        } else {
+            
+            println("panel now opening")
+            
+            UIView.animateWithDuration(0.9, delay: 0.1, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                self.panelScrollView.alpha = 1.0
+                self.menuView.alpha = 0.0
+                }, completion: nil)
+            
+            panelStatus = true
+        }
+        
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+
+    /*
+    // #pragma mark - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
+        // Get the new view controller using [segue destinationViewController].
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}

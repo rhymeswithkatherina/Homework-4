@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46144721197CE93600123A22 /* MainViewController_backup in Resources */ = {isa = PBXBuildFile; fileRef = 46144720197CE93600123A22 /* MainViewController_backup */; };
 		46ED8B51197B79ED002A0E00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ED8B50197B79ED002A0E00 /* AppDelegate.swift */; };
 		46ED8B53197B79ED002A0E00 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46ED8B52197B79ED002A0E00 /* Images.xcassets */; };
 		46ED8B5F197B79EE002A0E00 /* photo_pet_chef1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ED8B5E197B79EE002A0E00 /* photo_pet_chef1Tests.swift */; };
+		46ED8B6A197B7A14002A0E00 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ED8B68197B7A13002A0E00 /* MainViewController.swift */; };
+		46ED8B6B197B7A14002A0E00 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46ED8B69197B7A14002A0E00 /* MainViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,6 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		46144720197CE93600123A22 /* MainViewController_backup */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MainViewController_backup; sourceTree = "<group>"; };
 		46ED8B4B197B79ED002A0E00 /* photo_pet_chef1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = photo_pet_chef1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46ED8B4F197B79ED002A0E00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46ED8B50197B79ED002A0E00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +34,8 @@
 		46ED8B58197B79ED002A0E00 /* photo_pet_chef1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = photo_pet_chef1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46ED8B5D197B79EE002A0E00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46ED8B5E197B79EE002A0E00 /* photo_pet_chef1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photo_pet_chef1Tests.swift; sourceTree = "<group>"; };
+		46ED8B68197B7A13002A0E00 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		46ED8B69197B7A14002A0E00 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,9 @@
 			isa = PBXGroup;
 			children = (
 				46ED8B50197B79ED002A0E00 /* AppDelegate.swift */,
+				46ED8B68197B7A13002A0E00 /* MainViewController.swift */,
+				46144720197CE93600123A22 /* MainViewController_backup */,
+				46ED8B69197B7A14002A0E00 /* MainViewController.xib */,
 				46ED8B52197B79ED002A0E00 /* Images.xcassets */,
 				46ED8B4E197B79ED002A0E00 /* Supporting Files */,
 			);
@@ -182,7 +191,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46144721197CE93600123A22 /* MainViewController_backup in Resources */,
 				46ED8B53197B79ED002A0E00 /* Images.xcassets in Resources */,
+				46ED8B6B197B7A14002A0E00 /* MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46ED8B51197B79ED002A0E00 /* AppDelegate.swift in Sources */,
+				46ED8B6A197B7A14002A0E00 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +389,7 @@
 				46ED8B64197B79EE002A0E00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		46ED8B65197B79EE002A0E00 /* Build configuration list for PBXNativeTarget "photo_pet_chef1Tests" */ = {
 			isa = XCConfigurationList;
@@ -385,6 +398,7 @@
 				46ED8B67197B79EE002A0E00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
