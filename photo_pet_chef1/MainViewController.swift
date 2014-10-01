@@ -11,26 +11,26 @@ import UIKit
 class MainViewController: UIViewController {
 
 
-    @IBOutlet var panelContentView: UIView
-    @IBOutlet var panelScrollView: UIScrollView
-    @IBOutlet var menuView: UIImageView
-    @IBOutlet var bellButton: UIButton
-    @IBOutlet var painting: UIImageView
-    @IBOutlet var response1: UILabel
-    @IBOutlet var response2: UILabel
-    @IBOutlet var response3: UILabel
+    @IBOutlet var panelContentView: UIView!
+    @IBOutlet var panelScrollView: UIScrollView!
+    @IBOutlet var menuView: UIImageView!
+    @IBOutlet var bellButton: UIButton!
+    @IBOutlet var painting: UIImageView!
+    @IBOutlet var response1: UILabel!
+    @IBOutlet var response2: UILabel!
+    @IBOutlet var response3: UILabel!
 
-    @IBOutlet var creature: UIImageView
+    @IBOutlet var creature: UIImageView!
     
-    @IBOutlet var cornView: UIImageView
-    @IBOutlet var carrotView: UIImageView
-    @IBOutlet var beetView: UIImageView
-    @IBOutlet var pearView: UIImageView
+    @IBOutlet var cornView: UIImageView!
+    @IBOutlet var carrotView: UIImageView!
+    @IBOutlet var beetView: UIImageView!
+    @IBOutlet var pearView: UIImageView!
     
     
     var type : CGFloat?
     var panelStatus : Bool?
-    var foodCollection : UIImageView[] = []
+    var foodCollection : [UIImageView] = []
     var foodScore : CGFloat = 0
     var objectSizex : CGFloat = 50
     var newImageView : UIImageView?
@@ -120,7 +120,7 @@ class MainViewController: UIViewController {
     @IBAction func clearPlate(sender: AnyObject) {
         var count = foodCollection.count
         
-        for i in 0..count {
+        for i in 0...count {
             foodCollection[i].removeFromSuperview()
             //foodCollection[i].alpha = 0.0
         }
@@ -132,11 +132,6 @@ class MainViewController: UIViewController {
         response3.alpha = 0.0
     }
     
-
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        // Custom initialization
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -173,7 +168,7 @@ class MainViewController: UIViewController {
             //add image view to main view
             newImageView = UIImageView()
             newImageView!.userInteractionEnabled = true
-            view.addSubview(newImageView)
+            view.addSubview(newImageView!)
         
             
             //case specific image add & button formatting upon first click
@@ -358,6 +353,7 @@ class MainViewController: UIViewController {
     
     func onRotate(newSender: UIRotationGestureRecognizer) {
         var rotation: CGFloat = newSender.rotation
+        println("HEYYYYY")
         println(rotation)
         
         //rotate object
@@ -448,7 +444,7 @@ class MainViewController: UIViewController {
         imagePicker.allowsEditing = false
         
         // Show image picker
-        self.presentModalViewController(imagePicker, animated: true)
+      //  self.presentModalViewController(imagePicker, animated: true)
 
     }
     
@@ -461,7 +457,7 @@ class MainViewController: UIViewController {
         
         var photoImageView : UIImageView?
         photoImageView = UIImageView()
-        painting.addSubview(photoImageView)
+        painting.addSubview(photoImageView!)
         photoImageView!.frame = CGRectMake(painting.frame.origin.x, painting.frame.origin.y, 100, 100)
         photoImageView!.image = image
         
