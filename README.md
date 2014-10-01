@@ -39,3 +39,5 @@ Other:
 - Amount / size of food tracked into a score used to trigger dynamic feedback & animation
 - Clearing of all new elements from screen with a click of a button
 
+
+![Screencap](hmwk4.gif)
