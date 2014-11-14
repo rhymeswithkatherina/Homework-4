@@ -2,8 +2,6 @@ Homework-4
 ==========
 Using custom gestures part 2
 
-Time spent: 20 hours
-
 KNOWN ISSUES:
 
 - Some slight bugginess with interactions in certain use cases, could use massaging
