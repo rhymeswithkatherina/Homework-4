@@ -7,7 +7,7 @@ KNOWN ISSUES:
 - Some slight bugginess with interactions in certain use cases, could use massaging
 - Could not save & set image from camera
 
-REQUIRED STORIES COMPLETED:
+STORIES COMPLETED:
 
 Implement scrollable tray of images
 
@@ -25,7 +25,7 @@ Pinching images in the canvas area should resize them
 Other:
 - Fruit is still draggable after it's been dropped onto canvas
 
-OPTIONAL STORIES COMPLETED:
+OPTIONALS:
 - Allow the user to rotate the image
 - Tapping the camera icon opens the camera (no camera detected on my device so I made it open to photo album)
 
